@@ -1,5 +1,5 @@
-# steem-index
-Computes the h-index equivelent for an account
+# mine-secure
+Secures a mined account by randomizing all keys except active.  Allows login on steemit.com using the POSTING key.
 
 Requires Python 3:
 
