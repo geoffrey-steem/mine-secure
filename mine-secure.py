@@ -26,7 +26,7 @@ try:
     print("\n".join(account_names))
     print('\nYour new OWNER key will be (write this down): ' + new_owner_key['wif_priv_key'])
     print('Your brain key is (write this down): ' + new_owner_key['brain_priv_key'] + '\n')
-    ready_prompt = input('Have you written your new owner key down?  Are you ready to reset all of your account keys? y/n: ')
+    ready_prompt1 = input('Have you written your new owner key down?  Are you ready to reset all of your account keys? y/n: ')
     
     modify_active = input('Your accounts may have different active keys, would you like to reset them all to ' + new_active_key[1] + '? y/n: ')
     modify_active = 'y'
@@ -41,6 +41,7 @@ try:
         real_run = 'false'
         print('Updated keys will not be broadcast!  This is just a test run.')
 
+    print('Your new PRIVATE keys for all listed accounts will be: \n')
     if modify_active == 'y':
         print('\nOwner: ' + new_owner_key['wif_priv_key'] + '\nActive (used for mining): ' + new_active_key[1])
         print('Posting (used to login to steemit.com): ' + new_posting_key['wif_priv_key'] + '\nMemo: ' + new_memo_key['wif_priv_key'])
@@ -48,9 +49,9 @@ try:
         print('\nOwner: ' + new_owner_key['wif_priv_key'] + '\nActive (used for mining): Unmodified')
         print('Posting (used to login to steemit.com): ' + new_posting_key['wif_priv_key'] + '\nMemo: ' + new_memo_key['wif_priv_key'])
 
-    ready_prompt = input('\n Wrote all that down?  Ready for real? y/n:')
+    ready_prompt2 = input('\n Wrote all that down?  Ready for real? y/n:')
     
-    if ready_prompt == 'y':
+    if ready_prompt1 == 'y' and ready_prompt2 == 'y':
         real_run = 'true'
     else:
         real_run = 'false'
@@ -67,8 +68,8 @@ try:
         
     print('Beginning process...')
 
-    print('Completed process!  Your new PRIVATE keys for all listed accounts are: \n')
-    print('\nRemember, don\'t store these publically, and don\'t share them with anyone!\nHave a great rest of your day!')
+    print('Completed process!')
+    print('\nRemember, don\'t store your keys on a public computer, and don\'t share them with anyone!\nHave a great rest of your day!')
         
 except:
     print('Is cli_wallet running with `cli_wallet -r ' +  ip + ':' + str(port) + '`?  And is it unlocked?')
