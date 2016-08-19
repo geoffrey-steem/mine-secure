@@ -56,6 +56,7 @@ try:
         real_run = 'false'
         print('Updated keys will not be broadcast!  This is just a test run.')
 
+    print('Beginning process...')
       
     if modify_active == 'y':
         for acct in account_names:
@@ -64,9 +65,6 @@ try:
         for acct in account_names:
             rpc.update_account(acct,"",new_owner_key['pub_key'],"",new_posting_key['pub_key'],new_memo_key['pub_key'],real_run)
     
-        
-    print('Beginning process...')
-
     print('Completed process!')
     print('\nRemember, don\'t store your keys on a public computer, and don\'t share them with anyone!\nHave a great rest of your day!')
         
