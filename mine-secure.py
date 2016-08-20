@@ -28,8 +28,10 @@ try:
     print('Your brain key is (write this down): ' + new_owner_key['brain_priv_key'] + '\n')
     ready_prompt1 = input('Have you written your new owner key down?  Are you ready to reset all of your account keys? y/n: ')
     
-    modify_active = input('Your accounts may have different active keys, would you like to reset them all to ' + new_active_key[1] + '? y/n: ')
-    
+    # modify_active = input('Your accounts may have different active keys, would you like to reset them all to ' + new_active_key[1] + '? y/n: ')
+    modify_active = 'y'
+    # passing an empty string for the active key seems to fail, and rewrites all of the keys
+
     import_prompt = input('\nImport new OWNER key into wallet? [y]/n : ')
     if import_prompt == 'y':
         rpc.import_key(new_owner_key['wif_priv_key'])
